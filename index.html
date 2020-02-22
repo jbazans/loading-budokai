@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loading Budokai Tenkaichi</title>
+	<style type="text/css">
+		body,html{
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		.main-loading{
+			width: 100%;
+			height: 100%;
+			background: #0a0a5f;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+		.content-img{
+			position: absolute;
+			height: 30%;
+			bottom: 10px;
+			left: 10px;
+		}
+		.content-img img{
+			height: 100%;
+		}
+		.content-img img:nth-child(2){
+			height: 40%;
+			position: absolute;
+			bottom: 50%;
+			right: 15%;
+		}
+	</style>
+</head>
+<body>
+	<div class="main-loading">
+		<div class="content-img">
+			<img src="img/goku1.png" id="imgcontent1">
+			<img src="img/sopa1.png" id="imgcontent2">
+		</div>
+	</div>
+	<script type="text/javascript">
+		var numimggoku=1;
+		var maximggoku=2;
+		setInterval(change_img,150);
+		function change_img(){
+			numimggoku++;
+			if (numimggoku>maximggoku) {
+				numimggoku=1;
+			}
+			document.getElementById("imgcontent1").src="img/goku"+numimggoku+".png";
+		}
+		var numimgsopa=1;
+		var maximgsopa=8;
+		setInterval(change_img2,600);
+		function change_img2(){
+			numimgsopa++;
+			if (numimgsopa>maximgsopa) {
+				numimgsopa=1;
+			}
+			document.getElementById("imgcontent2").src="img/sopa"+numimgsopa+".png";
+		}
+	</script>
+</body>
+</html>
